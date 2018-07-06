@@ -39,7 +39,7 @@ public class SSUDS implements UserDetailsService {
 
 
             else {
-                System.out.println("Picked "+user.getUsername()+"from the database");
+                System.out.println("Picked "+user.getUsername()+" from the database");
                 return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), getAuthorities(user));
 
             }
@@ -58,7 +58,7 @@ public class SSUDS implements UserDetailsService {
         {
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role.getRole());
             authorities.add(grantedAuthority);
-            System.out.println("User authority:"+role.getRole());
+            System.out.println("User authority: "+role.getRole());
 
         }
         return authorities;

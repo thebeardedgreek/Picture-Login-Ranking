@@ -39,7 +39,6 @@ public class TastyNastyController {
     private PasswordEncoder passwordEncoder;
     //end of security add-on
 
-
     @Autowired
     private FoodRepository dishes;
 
@@ -55,10 +54,11 @@ public class TastyNastyController {
     @Autowired
     private CloudinaryConfig cloudc;
 
+
     @RequestMapping("/")
     public String showIndex(Model model){
         ArrayList<Food> dishList = (ArrayList)dishes.findAll();
-        for (Food dish:dishList){
+        for (Food dish:dishList) {
             dish.setLast5minutes(foodService.last5MinuteResult(dish.getId()));
         }
         model.addAttribute("dishes", dishList);
@@ -84,22 +84,7 @@ public class TastyNastyController {
         user.addRole(roleRepository.findByRole("USER"));
         user.setPassword(passwordEncoder.encode(thePassword));
         userRepository.save(user);
-        return "redirect:/login";
-
-    }
-
-    @RequestMapping("/granteduser")
-    public String showUser()
-    {
-        return "userpage";
-    }
-
-    @RequestMapping("/grantedadmin")
-    public String showAdmin()
-    {
-        //You can call methods instead of redirecting
-        System.out.println("Admin...");
-        return showUser();
+        return "listfood";
     }
     //end of security add-ons
 

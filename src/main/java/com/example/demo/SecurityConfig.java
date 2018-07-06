@@ -35,8 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //Restricts access to routes
         http.authorizeRequests()
                 .antMatchers("/","/register").permitAll()
-                .antMatchers("/granteduser").access("hasAuthority('USER')")
-                .antMatchers("/grantedadmin").access("hasAuthority('ADMIN')")
+               // .antMatchers("/granteduser").access("hasAuthority('USER')")
                 //Indicate all of the permitted routes above, before the line below
                 .anyRequest().authenticated()
                 .and()

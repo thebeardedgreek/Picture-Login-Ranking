@@ -15,6 +15,17 @@ public class Food {
     @Transient
     private String last5minutes;
 
+    public Set<Food> getUsers(Iterable<Food> allByUsersIn) {
+        return users;
+    }
+
+    public void setUsers(Set<Food> users) {
+        this.users = users;
+    }
+
+    @ManyToMany
+    private Set<Food> users;
+
     @OneToMany(mappedBy = "theDish")
     private Set<Tasty> tastyVotes;
 

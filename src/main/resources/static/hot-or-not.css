@@ -1,10 +1,15 @@
 #homepage{
-    background-image: url("img/food-background-2.jpg");
+    background-image: url("img/people-background-1.jpg");
     background-size: 100%;
 }
 
 #add-form{
-    background-image: url("img/food-background-3.jpg");
+    background-image: url("img/people-background-2.jpg");
+    background-size: 100%;
+}
+
+#registering{
+    background-image: url("img/people-background-3.jpg");
     background-size: 100%;
 }
 
